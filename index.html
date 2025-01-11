@@ -6,8 +6,13 @@
     <title>Christian Webpage</title>    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     <style>
+
+                                                    /*   Global     */
         body {
             font-family: Arial, sans-serif;
             color: #333;
@@ -17,7 +22,27 @@
         }
 
 
-        /*   LOGO    */
+        main {
+            flex-grow: 1;
+            padding-top: 5rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .component {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+
+                                            /*   LOGO    */
         header {
             position: fixed;
             top: 0;
@@ -56,274 +81,311 @@
             color: white;
         }
 
-        main {
-            flex-grow: 1;
-            padding-top: 5rem;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
 
 
-        /*  verse of the day */
+                                                    /*  verse of the day */
         .verse-section {
-            background: #eff6ff;
-            padding: 2rem 0;
+    background: #eff6ff;
+    padding: 1.5rem 0;
+}
+
+.verse-container {
+/*    max-width: 60rem;*/
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.verse-title {
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #1e3a8a;
+}
+
+.verse-text {
+    font-family: 'Noto Sans Telugu', sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.verse-reference {
+    text-align: right;
+    font-weight: 600;
+    color: #2563eb;
+}
+
+.verse-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.action-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: black;
+    font-size: 1.1rem;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background: none;
+}
+
+.action-button:hover {
+    transform: scale(1.05);
+}
+
+.action-button img {
+    width: 26px;
+    height: 26px;
+}
+
+.notification-icon {
+    background: #ff4d6d;
+    color: white;
+    padding: 8px 12px;
+    font-size: 0.91rem;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.notification-icon:hover {
+    background: #fa1d6d;
+    transform: scale(1.05);
+
+}
+
+
+
+
+                                                    /*  Video      */
+        button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
         }
 
-        .verse-container {
-            max-width: 62rem;
-            margin: 0 auto;
-            background: white;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        button:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
         }
-
-        .verse-title {
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #1e3a8a;
-            margin-bottom: 1rem;
-        }
-
-        .verse-text {
-            font-family: 'Noto Sans Telugu', sans-serif;
-            font-size: 1.25rem;
-        }
-
-        .verse-reference {
-            text-align: right;
-            font-weight: 600;
-            color: #2563eb;
-        }
-
-        .verse-actions {
-            display: flex;
-            justify-content: flex-end;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-
-        /*  Video      */
         .video-container {
-            background-color: blue;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            padding: 15px;
-            margin-bottom: 15px;
-            position: relative;
-        }
-
-        .video-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .video-info h2 {
-            font-size: 1.2rem;
-            margin-right: 10px;
-            flex-grow: 1;
-        }
-
-
-        .video-wrapper {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            border-radius: 8px;
         }
-
-        .video-wrapper iframe {
+        .video-container iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            border: none;
         }
-
-        .navigation-buttons {
+        .button-group {
             display: flex;
             justify-content: space-between;
-            margin-top: 15px;
+            margin-top: 10px;
+        }
+
+        .video-action-btn.favorited {
+            background-color: #FF4081;
+        }
+        textarea {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+
+                                                    /*   Donation   */
+        .donation-container {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 100%);
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            margin: 2rem auto;
+            border: 2px solid #bbdefb;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .donation-container h2 {
+            font-size: 26px;
+            font-weight: bold;
+            color: #0d47a1;
+            margin-bottom: 10px;
+        }
+
+        .donation-container p {
+            font-size: 18px;
+            color: #424242;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .donation-button {
+            padding: 14px 36px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, #1e88e5, #1565c0);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 12px rgba(30, 136, 229, 0.3);
+            display: inline-block;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+
+        .donation-button:hover {
+            background: linear-gradient(90deg, #1565c0, #1e88e5);
+            transform: scale(1.08);
+            box-shadow: 0 6px 16px rgba(30, 136, 229, 0.4);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .donation-container {
+                padding: 1.5rem;
+            }
+
+            .donation-button {
+                padding: 12px 30px;
+                font-size: 1.1rem;
+            }
+
+            .donation-container h2 {
+                font-size: 22px;
+            }
+
+            .donation-container p {
+                font-size: 16px;
+            }
+        }
+
+        
+
+                                                    /*  Image Quiz */ 
+        .quiz-container {
+            margin: 0.5rem auto;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 0px 20px 20px 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz-section {
+            text-align: center;
+        }
+
+        .question-image {
+            width: 100%; 
+            max-width: 600px;
+            height: auto; 
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .options-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 10px;
         }
 
-        .btn {
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 0.9rem;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: blue;
-        }
-
-        .btn:disabled {
-            background-color: #9ca3af;
-            cursor: not-allowed;
-        }
-
-        /*   COPY & SHARE     */
-        .action-button {
-            display: flex;
-            align-items: center;
-            gap: 0.2rem;
-            padding: 0.5rem 1rem;
-            border: none;
-            background: none;
-            color: #4b5563;
-            cursor: pointer;
-            transition: color 0.2s;
-            font-size: 0.875rem;
-        }
-
-        .action-button img{
-            width: 22px;
-            height: 22px;
-        }
-
-        .action-button:hover {
-            color: #2563eb;
-        }
-
-
-        .component {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        .component h2 {
-            color: #4f46e5;
-            margin-top: 0;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-        .book, .event {
-            background-color: #f3f4f6;
-            padding: 10px;
-            border-radius: 4px;
-            text-align: center;
-        }
-        button {
-            background-color: #4f46e5;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        /*   Donation   */
-        #donation{
-            text-align: center;
-        }
-
-        #donationButton {
-            display: block;
-            width: 200px;
-            margin: 20px auto;
-            font-size: 1.2em;
-            padding: 15px 30px;
-            border-radius: 50px;
-        }
-
-
-        /*  Image Quiz */
-        .quiz-container {
-            margin: 0.5rem auto;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
-
-        .question-section {
-            position: relative;
-            max-width: 500px;
-        }
-
-        #question-image {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .options-section {
-            display: flex;
-            gap: 0.5rem;
-        }
-
         .option-button {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 5px;
+            padding: 10px;
+            border: 2px solid #3949ab;
+            background-color: #fff;
+            color: #3949ab;
+            font-size: 16px;
             cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 4px;
         }
 
         .option-button:hover {
-            background-color: blue;
+            background-color: #3949ab;
+            color: #fff;
         }
 
-        .correct {
+        .option-button.correct {
             background-color: #4caf50;
-            color: white;
+            border-color: #4caf50;
+            color: #fff;
         }
 
-        .incorrect {
+        .option-button.incorrect {
             background-color: #f44336;
-            color: white;
+            border-color: #f44336;
+            color: #fff;
         }
 
-        .feedback-section {
-            margin-top: 20px;
+        .feedback {
             text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
         }
 
-        .hidden {
-            display: none;
+        .next-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #3949ab;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
         }
 
-        /*   Events     */
-
-        .event{
-            text-align: left;
+        .next-button:hover {
+            background-color: #303f9f;
         }
 
-        .event a{
-            text-decoration: none;
+        .quiz-completed {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
         }
 
-        /*   Bible Books     */
+        @media (max-width: 600px) {
+            .options-container {
+                grid-template-columns: 1fr;
+            }
+        }
 
+                                                    /*   Bible Books     */
         .bible-books {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 20px;
         }
         .bible-book {
             background-color: #e6f2ff;
@@ -332,11 +394,7 @@
             text-align: center;
             width: 18%;
         }
-        .bible-book img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
+
         #quizContainer {
             background-color: #e6f2ff;
             padding: 20px;
@@ -349,20 +407,21 @@
         }
 
 
-        /*  Refer    */
+                                                    /*  Refer    */
         .refer-container {
             background: white;
-            padding: 40px;
+            padding: 10px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 60%;
             text-align: center;
+            margin-bottom: 30px;
         }
 
 
         .whatsapp-btn {
             background: #25D366;
             color: white;
+            font-size: 1.2rem;
         }
 
         .whatsapp-btn:hover {
@@ -372,6 +431,7 @@
         .form-btn {
             background: #007bff;
             color: white;
+            font-size: 1.2rem;
         }
 
         .form-btn:hover {
@@ -382,6 +442,14 @@
             display: none;
             margin-top: 20px;
             text-align: left;
+            width: 40%;
+            margin: auto;
+            padding-top: 2rem;
+        }
+
+
+        .form-container h3{
+            text-align: center;
         }
 
         .form-container label {
@@ -403,6 +471,8 @@
         .send-btn {
             background: #ff5722;
             color: white;
+            font-size: 1.2rem;
+            width: 100%;
         }
 
         .send-btn:hover {
@@ -416,6 +486,249 @@
             margin-top: 15px;
             font-size: 18px;
         }
+
+                                                    /* Events Container */
+        /* Events Container */
+        .events-container {
+            position: relative;
+            background: linear-gradient(135deg, #ffebee, #fdeef2);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            margin-bottom: 20px;
+            transition: 0.3s ease-in-out;
+        }
+
+        /* Notification Icon */
+        .notification {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: #ff4d6d;
+            color: white;
+            padding: 8px 12px;
+            font-size: 14px;
+            border-radius: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .notification:hover {
+            background: #e939a0;
+        }
+
+        /* Toggle ON/OFF Effect */
+        .notification.off {
+            background: #ddd;
+            color: black;
+        }
+
+        .notification.off:hover {
+            background: #bbb;
+        }
+
+        /* Days Section */
+        .days {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+
+        .day {
+            font-size: 14px;
+            padding: 12px;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background: white;
+            color: #333;
+            transition: 0.3s ease-in-out;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .day:hover {
+            background: #ff4d6d;
+            color: white;
+        }
+
+        .day.active {
+            background: #ff4d6d;
+            color: white;
+        }
+
+        /* Event Details */
+        .event-details {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .event-details p {
+            font-size: 18px;
+            color: #444;
+            font-weight: bold;
+        }
+
+        /* Meeting Link */
+        .event-details a {
+            display: inline-block;
+            margin-top: 12px;
+            text-decoration: none;
+            background: #ff4d6d;
+            color: white;
+            width: 220px;
+            padding: 12px 15px;
+            border-radius: 25px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .event-details a:hover {
+            background: #e939a0;
+            transform: scale(1.05);
+        }
+
+
+        /* Global Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+
+    main {
+        padding-top: 4rem;
+    }
+
+    /* Logo Responsive */
+    .logo-container {
+        margin-left: 20px;
+    }
+
+    .site-title {
+        font-size: 1.2rem;
+    }
+
+    /* Verse Component Responsive */
+    .verse-container {
+        padding: 1rem;
+        margin: 0.5rem;
+    }
+
+    .verse-text {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .verse-title {
+        font-size: 1.4rem;
+    }
+
+
+    /* Video Component Responsive */
+    .video-container {
+        margin: 0 -0.5rem;
+    }
+
+
+    /* Image Quiz Responsive */
+    .quiz-container {
+        padding: 10px;
+    }
+
+    .question-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .options-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Bible Books Responsive */
+    .bible-books {
+        flex-direction: column;
+    }
+
+    .bible-book {
+        width: 100%;
+    }
+    #bookContainer p {
+        line-height: 0px
+    }
+
+    /* Donation Component Responsive */
+    .donation-container {
+        padding: 1rem;
+    }
+
+    .donation-container h2 {
+        font-size: 1.3rem;
+    }
+
+    .donation-container p {
+        font-size: 1rem;
+    }
+
+    /* Events Container Responsive */
+    .events-container {
+        padding: 15px;
+    }
+
+    .days {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .day {
+        font-size: 12px;
+        padding: 8px;
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+
+    .event-details p {
+        font-size: 1rem;
+    }
+
+
+    /* Refer Component Responsive */
+    .form-container {
+        padding: 1rem;
+    }
+
+    .refer-container button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Additional Small Screen Adjustments */
+@media (max-width: 480px) {
+    .verse-text {
+        font-size: 0.9rem;
+    }
+
+    .notification-icon {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+
+
+    h2 {
+        font-size: 1.2rem;
+    }
+}
+
 
     </style>
 </head>
@@ -432,68 +745,76 @@
         </header>
 
         <main>
+            <!-- Verse component -->
             <section class="verse-section">
-                <div class="container">
-                    <h2 class="verse-title">Verse of the Day</h2>
+                <div> <!-- class="container" -->
                     <div class="verse-container">
                         <p class="verse-text">దేవుడు లోకమును ఎంతో ప్రేమించెను. కాగా ఆయన తన అద్వితీయ కుమారునిగా పుట్టిన వానియందు విశ్వాసముంచు ప్రతివాడును నశింపక నిత్యజీవము పొందునట్లు ఆయనను అనుగ్రహించెను.</p>
                         <p class="verse-reference">యోహాను 3:16 </p>
+
                         <div class="verse-actions">
-                            <button class="action-button" onclick="copyVerse()">
+                            <button class="action-button" id='copyVerse'>
                                 <img src="https://jcmandir.com/media/images/copy.svg" alt="copy" />
                                 Copy
                             </button>
-                            <button class="action-button" onclick="shareToWhatsApp()">
+                            <button class="action-button" id='shareWhatsApp'>
                                 <img src="https://jcmandir.com/media/images/whatsapp.svg" alt="whatsapp" />
                                 Share
                             </button>
+                                <span id="notificationIcon" class="notification-icon">🔔 Notify</span>
+                            
+                            
                         </div>
                     </div>
+                    <h2 class="verse-title">Verse of the Day</h2>
                 </div>
-            </section>        
-
+            </section>
+    
+            
+            <!-- Video Component -->
             <section>
-                <div class="video-container component">
-                    <div class="video-info">
-                        <h2 id="videoTitle "> Video...</h2>
+                <div id="video-component" class="component">
+                    <h2>Video Component</h2>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allowfullscreen></iframe>
                     </div>
-                    
-                    <div class="video-wrapper">
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allowfullscreen></iframe>
+                    <div class="button-group">
+                        <button id="prev-video" disabled>Previous</button>
+                        <button id="toggle-notes">Keep Notes</button>
+                        <button id="next-video">Next</button>
                     </div>
-        <!-- https://youtu.be/tgbNymZ7vqY?feature=shared
-            https://www.youtube.com/embed/tgbNymZ7vqY -->
-
-                    <div class="navigation-buttons">
-                        <button id="previousButton" class="btn" disabled>
-                            <i class="fas fa-backward"></i> Previous
-                        </button>
-                        <button id="nextButton" class="btn">
-                            Next <i class="fas fa-forward"></i>
+                    <textarea id="video-notes" style="display: none;" placeholder="Take your notes here..."></textarea>
+                    <div class="button-group" style="margin-top: 10px;">
+                        <button id="share-video">Share</button>
+                        <button id="favorite-video" class="video-action-btn">
+                            <i class="far fa-heart"></i> Favorite
                         </button>
                     </div>
                 </div>
             </section>
 
-            <!-- Image Quiz -->
+            <!-- Image Quiz component -->
             <div class="quiz-container">
-                <div class="question-section">
-                    <img id="question-image" src="" alt="Question Image" />
-                    <h2 id="question-text"></h2>
+                <h2>Image Quiz</h2>
+                <div class="quiz-section">
+                    <img id="questionImage" class="question-image" src="/placeholder.svg" alt="Quiz Image">
                 </div>
-                <div class="options-section" id="options-container"></div>
-                <div class="feedback-section" id="feedback"></div>
-                <button id="next-button" class="hidden">Next Question</button>
-                <div id="score-section" class="hidden"></div>
+                <h3 id="questionText"></h3>
+                <div id="optionsContainer" class="options-container"></div>
+                <div id="feedback" class="feedback"></div>
+                <button id="nextButton" class="next-button" style="display: none;">Next Question</button>
+                <div id="quizCompleted" class="quiz-completed" style="display: none;"></div>
             </div>
 
-        <!-- Bible Books -->
-            <div class="container component" id="bibleBooks">
+        <!-- Bible Books component -->
+            <div class="component" id="bibleBooks">
                 <h2>Bible Books</h2>
                 <div class="bible-books" id="bookContainer"></div>
-                <button id="prevBooks">Previous</button>
-                <button id="nextBooks">Next</button>
-                <button id="testKnowledge">Test Your Knowledge</button>
+                <div class="button-group">
+                    <button id="prevBooks">Previous</button>
+                    <button id="testKnowledge">Test Your Knowledge</button>
+                    <button id="nextBooks">Next</button>
+                </div>
                 <div id="quizContainer" style="display: none;">
                     <h3>Bible Books Quiz</h3>
                     <p>What is the first book of the Bible?</p>
@@ -504,32 +825,46 @@
                 </div>
             </div>
 
-        <!-- Donation -->
-            <div id="donation" class="component">
-                <h2>Support Our Ministry</h2>
-                <button id="donationButton" onclick="initiateDonation()">Donate Now</button>
-                <p>Your generous donation helps us spread the Word of God.</p>
+        
+        <!-- Donation Component -->
+            <div class="donation-container">
+                <h2>Support God's Work 🙏</h2>
+                <p>Your generous donation helps us continue God's work and support our community.</p>
+                <button class="donation-button" id="donationButton">
+                    Donate Now ❤️
+                </button>
+                <p class="donation-text">Every gift, no matter the size, makes a difference. Thank you! 💙</p>
             </div>
+
             
-            <div id="eventsCalendar" class="component">
-                <h2>Weekly Events</h2>
-                <div id="eventsList" class="grid"></div>
+        <!-- Weekly events -->
+
+            <div class="events-container">
+                <h2>📖 Daily Prayers</h2>
+
+                <!-- Notification Toggle Icon -->
+                <div class="notification" id="notification">🔔 Notify</div>
+
+                <div class="days" id="daysContainer"></div>
+
+                <div class="event-details" id="eventDetails">
+                    <p>🕒 : <span id="eventTime">7:00 PM</span></p>
+                    <a id="eventLink" href="#" target="_blank" rel="noopener noreferrer">Join Meeting</a>
+                </div>
             </div>
+
 
         </main>
-
+        
+        <!-- Referal component -->
         <div class="refer-container container">
             <h2>Refer a Friend</h2>
 
-            <!-- Invite Form Button -->
             <button class="form-btn">Send Invite</button>
-
-            <!-- WhatsApp Share Button -->
             <button class="whatsapp-btn">Share on WhatsApp</button>
 
             <!-- Form -->
             <div class="form-container">
-                <h3>Send an Invitation</h3>
                 <label for="name">Friend's Name:</label>
                 <input type="text" id="name" placeholder="Enter name">
 
@@ -551,29 +886,88 @@
 <script>
     $(document).ready(function () {
         // Verse of the Day
-        $('#verse').text("For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life. - John 3:16");
-
-        // Copy verse function
-        async function copyVerse() {
+       $("#copyVerse").click(async function () {
             const verse = "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life. - John 3:16";
+            
             try {
                 await navigator.clipboard.writeText(verse);
-                alert('Verse copied to clipboard!');
+                Swal.fire({
+                    icon: "success",
+                    title: "Copied!",
+                    text: "Verse copied to clipboard.",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
             } catch (err) {
-                console.error('Failed to copy verse:', err);
+                Swal.fire({
+                    icon: "error",
+                    title: "Failed to copy!",
+                    text: "Try manually selecting and copying.",
+                });
             }
-        }
+        });
 
-        // Share to WhatsApp function
-        function shareToWhatsApp() {
-            const verse = "దేవుడు లోకమును ఎంతో ప్రేమించెను. కావున ఆయన తన అద్వితీయ కుమారునిగా పుట్టిన వానియందు విశ్వాసముంచు ప్రతివాడును నశింపక నిత్యజీవము పొందునట్లు ఆయనను అనుగ్రహించెను.";
-            const url = window.location.href;
+        $("#shareWhatsApp").click(function () {
+            const verse = "దేవుడు లోకమును ఎంతో ప్రేమించెను...";
+            const url = window.location.href || "https://yourwebsite.com";  
             const shareText = `${verse}\n\nVisit us at: ${url}`;
-            window.open(`https://wa.me/?text=${encodeURIComponent(shareText)}`, '_blank');
-        }
 
-        // Refer Friends
+            const whatsappURL = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+            window.open(whatsappURL, "_blank", "noopener,noreferrer");
+        });
+
+        let isSubscribed = false;
+
+        $("#notificationIcon").click(function () {
+            isSubscribed = !isSubscribed;
+
+            if (isSubscribed) {
+                $(this).removeClass("off").text("🔔 Notifications ON");
+                Swal.fire({
+                        title: "🔔 Notifications Enabled!",
+                        text: "You will receive Daily verse notifications..",
+                        icon: "success",
+                        confirmButtonColor: "#ff4d6d",
+                        confirmButtonText: "OK",
+                    });
+            } else {
+                $(this).removeClass("off").text("🔕 Notifications OFF");
+                Swal.fire({
+                    icon: "info",
+                    title: "🔕 Notifications Disabled",
+                    text: "You won't receive verse notifications.",
+                    confirmButtonColor: "#444",
+                    confirmButtonText: "OK",
+                });
+            }
+        });
+
+
+        // video Notes
+
+        let notesVisible = false;
+
+        $("#toggle-notes").click(function () {
+            notesVisible = !notesVisible;
+            $("#video-notes").toggle(notesVisible);
+            $(this).text(notesVisible ? "Save Notes" : "Keep Notes");
+        });
+
+        $("#share-video").click(function () {
+            alert("Video shared!");
+        });
+
         
+        let isFavorited = false;
+
+        $("#favorite-video").click(function() {
+            isFavorited = !isFavorited;
+            $(this).toggleClass('favorited');
+            $(this).html(isFavorited ? '<i class="fas fa-heart"></i> Favorited' : '<i class="far fa-heart"></i> Favorite');
+        });
+
+        // implement share and favorite 
+            
 
 
         // Bible Books
@@ -601,8 +995,6 @@
                 for (let i = currentIndex; i < currentIndex + 5; i++) {
                     if (i < allBooks.length) {
                         $('#bookContainer').append(`
-                            <div class="bible-book">
-                                <img src="https://via.placeholder.com/100x150?text=${allBooks[i]}" alt="${allBooks[i]}">
                                 <p>${allBooks[i]}</p>
                             </div>
                         `);
@@ -643,35 +1035,81 @@
             alert('Donation process initiated!');
         });
 
-        // Events Calendar
-        const events = {
-            Sunday: { time: '10:00 AM', link: 'https://zoom.us/j/1234567890' },
-            Monday: { time: '7:00 PM', link: 'https://zoom.us/j/2345678901' },
-            Tuesday: { time: '7:00 PM', link: 'https://zoom.us/j/3456789012' },
-            Wednesday: { time: '7:00 PM', link: 'https://zoom.us/j/4567890123' },
-            Thursday: { time: '7:00 PM', link: 'https://zoom.us/j/5678901234' },
-            Friday: { time: '7:00 PM', link: 'https://zoom.us/j/6789012345' },
-            Saturday: { time: '9:00 AM', link: 'https://zoom.us/j/7890123456' },
-        };
+                // Events Calendar
 
-        function populateEvents() {
-            const eventsList = $('#eventsList');
-            for (const [day, event] of Object.entries(events)) {
-                const eventElement = $('<div>').addClass('event').html(`
-                    <h3>${day}</h3>
-                    <p>Time: ${event.time}</p>
-                    <a href="${event.link}" target="_blank" rel="noopener noreferrer">Join Meeting</a>
-                `);
-                eventsList.append(eventElement);
+        $(document).ready(function () {
+            const events = {
+                Sunday: { time: '10:00 AM - 11:00 AM', link: 'https://zoom.us/j/1234567890' },
+                Monday: { time: '7:00 PM', link: 'https://zoom.us/j/2345678901' },
+                Tuesday: { time: '7:00 PM', link: 'https://zoom.us/j/3456789012' },
+                Wednesday: { time: '7:00 PM', link: 'https://zoom.us/j/4567890123' },
+                Thursday: { time: '7:00 PM', link: 'https://zoom.us/j/5678901234' },
+                Friday: { time: '7:00 PM', link: 'https://zoom.us/j/6789012345' },
+                Saturday: { time: '9:00 AM', link: 'https://zoom.us/j/7890123456' },
+            };
+
+            let selectedDay = new Date().toLocaleString('en-US', { weekday: 'long' });
+
+            function updateEventDetails(day) {
+                $("#eventTime").text(events[day].time);
+                $("#eventLink").attr("href", events[day].link);
             }
-        }
 
-        populateEvents();
+            function renderDays() {
+                const $daysContainer = $(".days");
+                $.each(events, function (day) {
+                    const $dayElement = $("<div>").addClass("day").text(day.slice(0, 3));
+
+                    if (day === selectedDay) {
+                        $dayElement.addClass("active");
+                    }
+
+                    $dayElement.on("click", function () {
+                        $(".day").removeClass("active");
+                        $(this).addClass("active");
+                        selectedDay = day;
+                        updateEventDetails(day);
+                    });
+
+                    $daysContainer.append($dayElement);
+                });
+            }
+
+            renderDays();
+            updateEventDetails(selectedDay);
+
+            // Notification Toggle Functionality
+            let isNotified = false;
+            $("#notification").on("click", function () {
+                isNotified = !isNotified;
+
+                if (isNotified) {
+                    $(this).removeClass("off").text("🔔 Notifications ON");
+                    Swal.fire({
+                        title: "🔔 Notifications Enabled!",
+                        text: "You will be reminded about today's meeting.",
+                        icon: "success",
+                        confirmButtonColor: "#ff4d6d",
+                        confirmButtonText: "OK",
+                    });
+                } else {
+                    $(this).addClass("off").text("🔕 Notifications OFF");
+                    Swal.fire({
+                        title: "🔕 Notifications Disabled!",
+                        text: "You will not receive reminders for today.",
+                        icon: "info",
+                        confirmButtonColor: "#444",
+                        confirmButtonText: "OK",
+                    });
+                }
+            });
+        });
+
 
 
 
                             // Quiz based on Images
-         const questions = [
+        const questions = [
         {
             id: 1,
             image: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff",
@@ -693,50 +1131,59 @@
 
     function loadQuestion() {
         const currentQuestion = questions[currentQuestionIndex];
-        $("#question-image").attr("src", currentQuestion.image);
-        $("#question-text").text(currentQuestion.question);
-        $("#options-container").empty();
+        $("#questionImage").attr("src", currentQuestion.image);
+        $("#questionText").text(currentQuestion.question);
+        $("#optionsContainer").empty();
+        $("#feedback").text("").hide();
+        $("#nextButton").hide();
+
         currentQuestion.options.forEach(option => {
-            $("#options-container").append(`<button class='option-button'>${option}</button>`);
+            const button = $("<button>")
+                .text(option)
+                .addClass("option-button")
+                .click(() => selectOption(option));
+            $("#optionsContainer").append(button);
         });
-        $("#feedback").empty();
-        $("#next-button").addClass("hidden");
-        $("#score-section").addClass("hidden");
     }
 
-    $(document).on("click", ".option-button", function() {
-        const selectedOption = $(this).text();
+    function selectOption(selectedOption) {
         const currentQuestion = questions[currentQuestionIndex];
-        
-        if (selectedOption === currentQuestion.correctAnswer) {
-            $(this).addClass("correct");
-            score++;
-            $("#feedback").text("Correct Answer! 🎉").css("color", "green");
-        } else {
-            $(this).addClass("incorrect");
-            $("#feedback").text(`Wrong Answer! The correct answer is ${currentQuestion.correctAnswer}`).css("color", "red");
-        }
-
         $(".option-button").prop("disabled", true);
-        $("#next-button").removeClass("hidden");
-        
-        if (currentQuestionIndex === questions.length - 1) {
-            $("#score-section").text(`Quiz Complete! Final Score: ${score}/${questions.length}`).removeClass("hidden");
-            $("#next-button").addClass("hidden");
-        }
-    });
 
-    $("#next-button").click(function() {
+        $(".option-button").each(function () {
+            if ($(this).text() === currentQuestion.correctAnswer) {
+                $(this).addClass("correct");
+            } else if ($(this).text() === selectedOption && selectedOption !== currentQuestion.correctAnswer) {
+                $(this).addClass("incorrect");
+            }
+        });
+
+        if (selectedOption === currentQuestion.correctAnswer) {
+            $("#feedback").text("Correct Answer! 🎉").css("color", "#4caf50").show();
+            score++;
+        } else {
+            $("#feedback").text(`Wrong Answer. The correct answer is ${currentQuestion.correctAnswer}.`)
+                .css("color", "#f44336").show();
+        }
+
+        $("#nextButton").show();
+    }
+
+    function nextQuestion() {
         currentQuestionIndex++;
-        
         if (currentQuestionIndex < questions.length) {
             loadQuestion();
+        } else {
+            showResult();
         }
-        
-        if (currentQuestionIndex === questions.length) {
-            $(this).addClass("hidden");
-        }
-    });
+    }
+
+    function showResult() {
+        $("#questionImage, #questionText, #optionsContainer, #feedback, #nextButton").hide();
+        $("#quizCompleted").show().text(`Quiz Completed! Your score: ${score} out of ${questions.length}`);
+    }
+
+    $("#nextButton").click(nextQuestion);
 
     loadQuestion();
 
