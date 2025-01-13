@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Christian Webpage</title>    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
     <style>
-
                                                     /*   Global     */
         body {
             font-family: Arial, sans-serif;
@@ -21,10 +20,8 @@
             padding: 0;
         }
 
-
         main {
-            flex-grow: 1;
-            padding-top: 5rem;
+            padding-top: 3rem;
         }
 
         .container {
@@ -41,8 +38,7 @@
             margin-bottom: 20px;
         }
 
-
-                                            /*   LOGO    */
+                                                    /*   LOGO    */
         header {
             position: fixed;
             top: 0;
@@ -76,119 +72,130 @@
         }
 
         .site-title {
-            font-size: 1.5rem;
+            font-size: 1.85rem;
             font-weight: 600;
             color: white;
+            margin: 0.7rem;
         }
-
-
 
                                                     /*  verse of the day */
         .verse-section {
-    background: #eff6ff;
-    padding: 1.5rem 0;
-}
+            padding: 1.2rem 0;
+        }
 
-.verse-container {
-/*    max-width: 60rem;*/
-    margin: 0 auto;
-    background: white;
-    padding: 2rem;
-    border-radius: 0.75rem;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.verse-title {
-    text-align: center;
-    font-size: 1.7rem;
-    font-weight: bold;
-    color: #1e3a8a;
-}
-
-.verse-text {
-    font-family: 'Noto Sans Telugu', sans-serif;
-    font-size: 1.3rem;
-    line-height: 1.6;
-    color: #333;
-}
-
-.verse-reference {
-    text-align: right;
-    font-weight: 600;
-    color: #2563eb;
-}
-
-.verse-actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.action-button {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: black;
-    font-size: 1.1rem;
-    padding: 0.6rem 1rem;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    background: none;
-}
-
-.action-button:hover {
-    transform: scale(1.05);
-}
-
-.action-button img {
-    width: 26px;
-    height: 26px;
-}
-
-.notification-icon {
-    background: #ff4d6d;
-    color: white;
-    padding: 8px 12px;
-    font-size: 0.91rem;
-    border-radius: 20px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.notification-icon:hover {
-    background: #fa1d6d;
-    transform: scale(1.05);
-
-}
+        .verse-container {
+            margin: 0 auto;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
 
 
+        .verse-title {
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 1rem;
+        }
 
+        .verse-text {
+            font-family: 'Anek Telugu', sans-serif;
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .verse-reference {
+            text-align: right;
+            font-weight: 600;
+            color: #2563eb;
+        }
+
+        .verse-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .action-button {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: #333;
+            font-size: 1rem;
+            padding: 0.4rem 0.8rem;
+            border: none;
+            border-radius: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            background: #e2e8f0;
+            font-weight: 500;
+        }
+
+        .action-button:hover {
+            background: #cbd5e1;
+        }
+
+        .action-button img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .notification-icon {
+            background: #dc2626;
+            color: white;
+            padding: 6px 10px;
+            font-size: 0.9rem;
+            border-radius: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+            text-align: center;
+        }
+
+        .notification-icon:hover {
+            background: #b91c1c;
+        }
+
+        /* Notification OFF (Gray) */
+        .notification-icon.off {
+            background: #bbb;
+            color: white;
+        }
+
+        .notification-icon.off:hover {
+            background: #999;
+        }
 
                                                     /*  Video      */
-        button {
-            background-color: #3498db;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
+         .video-component {
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 0 ;
+            margin-bottom: 20px;
+    text-align: center;
+        }
+
+        .video-component h2{
+            padding-top: 0.6rem;
+            padding-bottom: 0;
+            margin: 0.4rem;
         }
 
 
-        button:disabled {
-            background-color: #bdc3c7;
-            cursor: not-allowed;
-        }
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
+            margin: 0 0.5rem;
             overflow: hidden;
+            border-radius: 1rem;
         }
         .video-container iframe {
             position: absolute;
@@ -196,22 +203,317 @@
             left: 0;
             width: 100%;
             height: 100%;
+            border-radius: 0.5rem;
         }
+       
         .button-group {
             display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 15px;
+            padding-bottom: 1rem;
+        }
+
+        .button-group  button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .button-group button i {
+            font-size: 18px;
+        }
+
+        .button-group > button:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
         }
 
         .video-action-btn.favorited {
             background-color: #FF4081;
         }
         textarea {
-            width: 100%;
-            margin-top: 10px;
+            width: 90%;
             padding: 10px;
             border: 1px solid #ddd;
+            border-radius: 6px;
+            border: 1px solid;
+        }
+                                                    /*   Contact     */
+                    .contact-card {
+            background: white;
+            text-align: center;
+            transition: 0.3s ease-in-out;
+            margin: 0;
+        }
+
+        .contact-card h3 {
+            color: #007bff;
+        }
+
+        /* Buttons */
+        .contact-btn {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .contact-btn button {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .call-btn {
+            background: #28a745;
+        }
+
+        .call-btn:hover {
+            background: #218838;
+        }
+
+        /* Icons */
+        .contact-btn button i {
+            font-size: 1rem;
+        }
+
+        
+
+                                                    /*  Image Quiz */ 
+
+        .image-component {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-dialog {
+            background: white;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-header,
+        .modal-body {
+            padding: 15px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .modal-title {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .btn {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-close {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .quiz-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .question-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .options-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .option-button {
+            padding: 10px;
+            border: 2px solid #3949ab;
+            background-color: #fff;
+            color: #3949ab;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
             border-radius: 4px;
+        }
+
+        .option-button:hover {
+            background-color: #3949ab;
+            color: #fff;
+        }
+
+        .option-button.correct {
+            background-color: #4caf50;
+            color: #fff;
+            border-color: #4caf50;
+        }
+
+        .option-button.incorrect {
+            background-color: #f44336;
+            color: #fff;
+            border-color: #f44336;
+        }
+
+        .feedback {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .next-button {
+            display: none;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #3949ab;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .quiz-completed {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+                                                    /*   Bible Books     */
+        .bible-books {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .bible-book {
+            background-color: #e6f2ff;
+            padding: 10px;
+            border-radius: 5px;
+            width: 150px;
+            text-align: center;
+        }
+
+        
+
+        /* Modal Styles */
+        #BooksquizModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 20px;
+            width: 40%;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .quiz-question {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .quizOption {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            background-color: #007bff;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        .quizOption:hover {
+            background-color: #0056b3;
+        }
+
+        .correct {
+            background-color: #28a745 !important;
+        }
+
+        .wrong {
+            background-color: #dc3545 !important;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
         }
 
 
@@ -268,227 +570,10 @@
             100% { transform: scale(1); }
         }
 
-        @media (max-width: 768px) {
-            .donation-container {
-                padding: 1.5rem;
-            }
-
-            .donation-button {
-                padding: 12px 30px;
-                font-size: 1.1rem;
-            }
-
-            .donation-container h2 {
-                font-size: 22px;
-            }
-
-            .donation-container p {
-                font-size: 16px;
-            }
-        }
-
-        
-
-                                                    /*  Image Quiz */ 
-        .quiz-container {
-            margin: 0.5rem auto;
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 0px 20px 20px 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .quiz-section {
-            text-align: center;
-        }
-
-        .question-image {
-            width: 100%; 
-            max-width: 600px;
-            height: auto; 
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-
-        .options-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-
-        .option-button {
-            padding: 10px;
-            border: 2px solid #3949ab;
-            background-color: #fff;
-            color: #3949ab;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 4px;
-        }
-
-        .option-button:hover {
-            background-color: #3949ab;
-            color: #fff;
-        }
-
-        .option-button.correct {
-            background-color: #4caf50;
-            border-color: #4caf50;
-            color: #fff;
-        }
-
-        .option-button.incorrect {
-            background-color: #f44336;
-            border-color: #f44336;
-            color: #fff;
-        }
-
-        .feedback {
-            text-align: center;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-
-        .next-button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #3949ab;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin-top: 20px;
-        }
-
-        .next-button:hover {
-            background-color: #303f9f;
-        }
-
-        .quiz-completed {
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            margin: 20px 0;
-        }
-
-        @media (max-width: 600px) {
-            .options-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-                                                    /*   Bible Books     */
-        .bible-books {
-            display: flex;
-            justify-content: space-between;
-        }
-        .bible-book {
-            background-color: #e6f2ff;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-            width: 18%;
-        }
-
-        #quizContainer {
-            background-color: #e6f2ff;
-            padding: 20px;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        #quizContainer button {
-            margin-right: 10px;
-            margin-bottom: 10px;
-        }
 
 
-                                                    /*  Refer    */
-        .refer-container {
-            background: white;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-
-        .whatsapp-btn {
-            background: #25D366;
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        .whatsapp-btn:hover {
-            background: #1da851;
-        }
-
-        .form-btn {
-            background: #007bff;
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        .form-btn:hover {
-            background: #0056b3;
-        }
-
-        .form-container {
-            display: none;
-            margin-top: 20px;
-            text-align: left;
-            width: 40%;
-            margin: auto;
-            padding-top: 2rem;
-        }
-
-
-        .form-container h3{
-            text-align: center;
-        }
-
-        .form-container label {
-            font-size: 16px;
-            font-weight: bold;
-            color: #555;
-        }
-
-        .form-container input,
-        .form-container textarea {
-            width: 100%;
-            margin: 10px 0;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 16px;
-        }
-
-        .send-btn {
-            background: #ff5722;
-            color: white;
-            font-size: 1.2rem;
-            width: 100%;
-        }
-
-        .send-btn:hover {
-            background: #e64a19;
-        }
-
-        .success-message {
-            display: none;
-            color: green;
-            font-weight: bold;
-            margin-top: 15px;
-            font-size: 18px;
-        }
 
                                                     /* Events Container */
-        /* Events Container */
         .events-container {
             position: relative;
             background: linear-gradient(135deg, #ffebee, #fdeef2);
@@ -599,139 +684,357 @@
         }
 
 
-        /* Global Responsive Styles */
-@media (max-width: 768px) {
-    .container {
-        padding: 0 0.5rem;
-    }
-
-    main {
-        padding-top: 4rem;
-    }
-
-    /* Logo Responsive */
-    .logo-container {
-        margin-left: 20px;
-    }
-
-    .site-title {
-        font-size: 1.2rem;
-    }
-
-    /* Verse Component Responsive */
-    .verse-container {
-        padding: 1rem;
-        margin: 0.5rem;
-    }
-
-    .verse-text {
-        font-size: 1rem;
-        line-height: 1.4;
-    }
-
-    .verse-title {
-        font-size: 1.4rem;
-    }
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ff4d6d;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            display: none;
+            font-size: 14px;
+        }
 
 
-    /* Video Component Responsive */
-    .video-container {
-        margin: 0 -0.5rem;
-    }
 
 
-    /* Image Quiz Responsive */
-    .quiz-container {
-        padding: 10px;
-    }
-
-    .question-image {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .options-container {
-        grid-template-columns: 1fr;
-    }
-
-    /* Bible Books Responsive */
-    .bible-books {
-        flex-direction: column;
-    }
-
-    .bible-book {
-        width: 100%;
-    }
-    #bookContainer p {
-        line-height: 0px
-    }
-
-    /* Donation Component Responsive */
-    .donation-container {
-        padding: 1rem;
-    }
-
-    .donation-container h2 {
-        font-size: 1.3rem;
-    }
-
-    .donation-container p {
-        font-size: 1rem;
-    }
-
-    /* Events Container Responsive */
-    .events-container {
-        padding: 15px;
-    }
-
-    .days {
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-
-    .day {
-        font-size: 12px;
-        padding: 8px;
-        width: 1.8rem;
-        height: 1.8rem;
-    }
-
-    .event-details p {
-        font-size: 1rem;
-    }
+                                                    /*  Refer    */
+        .refer-container {
+            text-align: center;
+        }
 
 
-    /* Refer Component Responsive */
-    .form-container {
-        padding: 1rem;
-    }
+        /* Buttons */
+        .whatsapp-btn, .form-btn, .call-btn {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
 
-    .refer-container button {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-}
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+        }
 
-/* Additional Small Screen Adjustments */
-@media (max-width: 480px) {
-    .verse-text {
-        font-size: 0.9rem;
-    }
+        .whatsapp-btn:hover {
+            background: #1da851;
+        }
 
-    .notification-icon {
-        font-size: 0.8rem;
-        padding: 6px 10px;
-    }
+        .form-btn {
+            background: #007bff;
+            color: white;
+        }
+
+        .form-btn:hover {
+            background: #0056b3;
+        }
+
+        /* formMODAL */
+        .formmodal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .formmodal.active {
+            display: flex;
+        }
+
+        .formmodal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            text-align: left;
+            position: relative;
+            animation: slideIn 0.3s ease-in-out;
+        }
+
+        /* Close Button */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 22px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
+
+        /* Form Styles */
+        .formmodal-content h3 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .formmodal-content label {
+            font-weight: bold;
+            font-size: 14px;
+            display: block;
+            margin: 10px 0 5px;
+            color: #444;
+        }
+
+        .formmodal-content input {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .send-btn {
+            width: 100%;
+            padding: 12px;
+            background: #ff5722;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .send-btn:hover {
+            background: #e64a19;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            color: green;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
 
 
-    h2 {
-        font-size: 1.2rem;
-    }
-}
+                /* Global Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 0.5rem;
+            }
 
+            main {
+                padding-top: 4rem;
+            }
+
+            /* Logo Responsive */
+            .logo-container {
+                margin-left: 0px;
+            }
+
+            .site-title {
+                font-size: 1.6rem;
+            }
+
+            /* Verse Component Responsive */
+            .verse-container {
+                padding: 1.5rem;
+                margin: 0 auto;
+            }
+
+            .verse-text {
+                font-size: 1rem;
+                line-height: 1.4;
+            }
+
+            .verse-title {
+                font-size: 1.4rem;
+            }
+
+            .action-button {
+                font-size: 0.9rem;
+                padding: 0.35rem 0.7rem;
+            }
+
+            .action-button img {
+                width: 18px;
+                height: 18px;
+            }
+
+
+            /* Video Component Responsive */
+            .button-group button {
+                font-size: 12px;
+            }
+                .button-group button i {
+                font-size: 14px;
+            }
+            .video-component {
+                padding: 0.8rem;
+            }
+
+            .video-component h2 {
+                font-size: 1.2rem;
+            }
+
+            .video-container {
+                margin: 0 -0.5rem;
+            }
+
+
+            /* Image Quiz Responsive */
+            .quiz-container {
+                padding: 10px;
+            }
+
+            .question-image {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .options-container {
+                grid-template-columns: 1fr;
+            }
+
+            /* Bible Books Responsive */
+
+            #bookContainer p {
+                line-height: 0px
+            }
+
+            .bible-books {
+                display: block;
+                padding: 10px;
+            }
+
+            .bible-book {
+                display: block;
+                width: 90%;
+                margin: 5px auto;
+                padding: 12px;
+                font-size: 16px;
+            }
+
+            .modal-content {
+                width: 75%;
+            }
+
+            /* Donation Component Responsive */
+            .donation-container {
+                padding: 1rem;
+            }
+
+            .donation-container h2 {
+                font-size: 1.3rem;
+            }
+
+            .donation-container p {
+                font-size: 1rem;
+            }
+
+            /* Events Container Responsive */
+            .events-container {
+                padding: 15px;
+            }
+
+            .days {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .day {
+                font-size: 12px;
+                padding: 8px;
+                width: 1.8rem;
+                height: 1.8rem;
+            }
+
+            .event-details p {
+                font-size: 1rem;
+            }
+
+
+            /* Refer Component Responsive */
+            .form-container {
+                padding: 1rem;
+            }
+
+            .refer-container button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Additional Small Screen Adjustments */
+        @media (max-width: 480px) {
+            .verse-text {
+                font-size: 0.9rem;
+            }
+
+            .verse-container > p{
+                margin: 0;
+            }
+
+            .notification-icon {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            /*     Video      */
+            
+            .video-component h2 {
+                font-size: 1rem;
+                margin: 0;
+                padding: 0;
+                padding-bottom: 6px;
+            }
+
+                .button-group button i {
+                font-size: 10px;
+            }
+
+            /*  Events  */
+            .days {
+                gap: 4px;
+            }
+
+            .day {
+                padding: 0.4rem;
+            }
+
+            /*     Refer Form      */
+            .formmodal-content {
+                width: 75%;
+            }
+        }
 
     </style>
 </head>
+
 <body>
     <div class="container">
         
@@ -748,62 +1051,90 @@
             <!-- Verse component -->
             <section class="verse-section">
                 <div> <!-- class="container" -->
+                    <h2 class="verse-title">Verse of the Day</h2>
                     <div class="verse-container">
                         <p class="verse-text">దేవుడు లోకమును ఎంతో ప్రేమించెను. కాగా ఆయన తన అద్వితీయ కుమారునిగా పుట్టిన వానియందు విశ్వాసముంచు ప్రతివాడును నశింపక నిత్యజీవము పొందునట్లు ఆయనను అనుగ్రహించెను.</p>
                         <p class="verse-reference">యోహాను 3:16 </p>
 
                         <div class="verse-actions">
                             <button class="action-button" id='copyVerse'>
-                                <img src="https://jcmandir.com/media/images/copy.svg" alt="copy" />
-                                Copy
+                                <img src="https://jcmandir.com/media/images/copy.svg" alt="copy" /> Copy
                             </button>
                             <button class="action-button" id='shareWhatsApp'>
-                                <img src="https://jcmandir.com/media/images/whatsapp.svg" alt="whatsapp" />
-                                Share
+                                <img src="https://jcmandir.com/media/images/whatsapp.svg" alt="whatsapp" />Share
                             </button>
                                 <span id="notificationIcon" class="notification-icon">🔔 Notify</span>
-                            
-                            
                         </div>
                     </div>
-                    <h2 class="verse-title">Verse of the Day</h2>
                 </div>
             </section>
     
             
             <!-- Video Component -->
             <section>
-                <div id="video-component" class="component">
+                <div id="video-component" class="video-component">
                     <h2>Video Component</h2>
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <div class="button-group">
-                        <button id="prev-video" disabled>Previous</button>
-                        <button id="toggle-notes">Keep Notes</button>
-                        <button id="next-video">Next</button>
+                        <button id="prev-video" disabled><i class="fas fa-chevron-left"></i></button>
+                        <button id="share-video"><i class="fas fa-share"></i></button>
+                        <button id="toggle-notes">Keep Notes</i></button>
+                        <button id="favorite-video" class="video-action-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <button id="next-video"><i class="fas fa-chevron-right"></i></button>
                     </div>
                     <textarea id="video-notes" style="display: none;" placeholder="Take your notes here..."></textarea>
-                    <div class="button-group" style="margin-top: 10px;">
-                        <button id="share-video">Share</button>
-                        <button id="favorite-video" class="video-action-btn">
-                            <i class="far fa-heart"></i> Favorite
-                        </button>
-                    </div>
                 </div>
             </section>
 
-            <!-- Image Quiz component -->
-            <div class="quiz-container">
-                <h2>Image Quiz</h2>
-                <div class="quiz-section">
-                    <img id="questionImage" class="question-image" src="/placeholder.svg" alt="Quiz Image">
+
+            <!-- Contact Component -->
+
+            <div class="component">
+                 <div class="contact-card">
+                    <h2>Contact</h2>
+                    <h3 id="contactName">John Doe</h3>
+
+                    <div class="contact-btn">
+                        <button class="call-btn" id="callButton">
+                            <i class="fas fa-phone"></i> Call
+                        </button>
+                        <button class="whatsapp-btn" id="whatsappButton">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </button>
+                    </div>
                 </div>
-                <h3 id="questionText"></h3>
-                <div id="optionsContainer" class="options-container"></div>
-                <div id="feedback" class="feedback"></div>
-                <button id="nextButton" class="next-button" style="display: none;">Next Question</button>
-                <div id="quizCompleted" class="quiz-completed" style="display: none;"></div>
+            </div>
+
+
+            <!-- Image Quiz component -->
+            <div class="image-component">
+                <h2>Daily Image Quiz</h2>
+                <p>Click below to take today's quiz.</p>
+                <button class="btn" id="openQuizButton">Take Quiz</button>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal" id="quizModal">
+                <div class="modal-dialog">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Image Quiz</h5>
+                        <button class="btn-close" id="closeQuizButton">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="quiz-container">
+                            <img id="questionImage" class="question-image" src="" alt="Quiz Image">
+                            <h3 id="questionText"></h3>
+                            <div id="optionsContainer" class="options-container"></div>
+                            <div id="feedback" class="feedback"></div>
+                            <button id="nextButton" class="next-button">Next Question</button>
+                            <div id="quizCompleted" class="quiz-completed" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         <!-- Bible Books component -->
@@ -815,13 +1146,14 @@
                     <button id="testKnowledge">Test Your Knowledge</button>
                     <button id="nextBooks">Next</button>
                 </div>
-                <div id="quizContainer" style="display: none;">
+            </div>
+
+            <div id="BooksquizModal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
                     <h3>Bible Books Quiz</h3>
-                    <p>What is the first book of the Bible?</p>
-                    <button class="quizOption">Genesis</button>
-                    <button class="quizOption">Exodus</button>
-                    <button class="quizOption">Leviticus</button>
-                    <button class="quizOption">Numbers</button>
+                    <div id="quizContent"></div>
+                    <p id="scoreDisplay" style="font-weight: bold; display: none;"></p>
                 </div>
             </div>
 
@@ -841,43 +1173,50 @@
 
             <div class="events-container">
                 <h2>📖 Daily Prayers</h2>
-
-                <!-- Notification Toggle Icon -->
                 <div class="notification" id="notification">🔔 Notify</div>
-
                 <div class="days" id="daysContainer"></div>
-
                 <div class="event-details" id="eventDetails">
                     <p>🕒 : <span id="eventTime">7:00 PM</span></p>
                     <a id="eventLink" href="#" target="_blank" rel="noopener noreferrer">Join Meeting</a>
                 </div>
             </div>
 
+            <div class="toast" id="toast">📢 Meeting is LIVE now! Click "Join Meeting".</div>
+
 
         </main>
         
         <!-- Referal component -->
-        <div class="refer-container container">
-            <h2>Refer a Friend</h2>
+        <div class="component">
+            <div class="refer-container">
+                <h2>Refer a Friend</h2>
+                <p >📖✨ Extend this blessing today and help a friend find peace, purpose, and joy in God's Word! 🙏❤️</p>
 
-            <button class="form-btn">Send Invite</button>
-            <button class="whatsapp-btn">Share on WhatsApp</button>
-
-            <!-- Form -->
-            <div class="form-container">
-                <label for="name">Friend's Name:</label>
-                <input type="text" id="name" placeholder="Enter name">
-
-                <label for="email">Friend's Email:</label>
-                <input type="email" id="email" placeholder="Enter email">
-
-                <label for="message">Personal Message:</label>
-                <textarea id="message" placeholder="Write a message..."></textarea>
-
-                <button class="send-btn">Send Invitation</button>
+                <div class="button-group">
+                     <button class="form-btn">Send Invite</button>
+                    <button class="whatsapp-btn">Share on WhatsApp</button>
+                </div>
             </div>
 
-            <p class="success-message">Invitation sent successfully! ✅</p>
+            <!-- formModal -->
+            <div class="formmodal">
+                <div class="formmodal-content">
+                    <span class="close-btn">&times;</span>
+                    <h3>Invite Your Friend</h3>
+
+                    <label for="name">Friend's Name:</label>
+                    <input type="text" id="name" placeholder="Enter name" required>
+
+                    <label for="contact">Contact:</label>
+                    <input type="tel" id="contact" placeholder="Enter phone number" pattern="[0-9]{10,}" title="Enter a valid 10-digit phone number" required>
+
+                    <label for="college">College Name:</label>
+                    <input type="text" id="college" placeholder="Enter college name" required>
+                    <button class="send-btn">Send Invitation</button>
+                    <p class="success-message">Invitation sent successfully! ✅</p>
+                </div>
+            </div>
+
         </div>
 
 
@@ -886,7 +1225,7 @@
 <script>
     $(document).ready(function () {
         // Verse of the Day
-       $("#copyVerse").click(async function () {
+        $("#copyVerse").click(async function () {
             const verse = "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life. - John 3:16";
             
             try {
@@ -920,18 +1259,19 @@
 
         $("#notificationIcon").click(function () {
             isSubscribed = !isSubscribed;
+            $(this).toggleClass("off", !isSubscribed);
 
             if (isSubscribed) {
-                $(this).removeClass("off").text("🔔 Notifications ON");
+                $(this).text("🔔 ON");
                 Swal.fire({
-                        title: "🔔 Notifications Enabled!",
-                        text: "You will receive Daily verse notifications..",
-                        icon: "success",
-                        confirmButtonColor: "#ff4d6d",
-                        confirmButtonText: "OK",
-                    });
+                    title: "🔔 Notifications Enabled!",
+                    text: "You will receive Daily verse notifications.",
+                    icon: "success",
+                    confirmButtonColor: "#ff4d6d",
+                    confirmButtonText: "OK",
+                });
             } else {
-                $(this).removeClass("off").text("🔕 Notifications OFF");
+                $(this).text("🔕 OFF");
                 Swal.fire({
                     icon: "info",
                     title: "🔕 Notifications Disabled",
@@ -941,6 +1281,7 @@
                 });
             }
         });
+
 
 
         // video Notes
@@ -963,11 +1304,106 @@
         $("#favorite-video").click(function() {
             isFavorited = !isFavorited;
             $(this).toggleClass('favorited');
-            $(this).html(isFavorited ? '<i class="fas fa-heart"></i> Favorited' : '<i class="far fa-heart"></i> Favorite');
+            $(this).html(isFavorited ? '<i class="fas fa-heart"></i> ' : '<i class="far fa-heart"></i>');
         });
 
-        // implement share and favorite 
-            
+                    // Contact
+
+        $("#callButton").click(function() {
+            window.location.href = "tel:+1234567890";
+        });
+
+        // Handle WhatsApp Button Click
+        $("#whatsappButton").click(function() {
+            window.open("https://wa.me/1234567890", "_blank");
+        });
+
+
+                            // Image Quiz
+        const $modal = $("#quizModal");
+        const $openQuizButton = $("#openQuizButton");
+        const $closeQuizButton = $("#closeQuizButton");
+
+        $openQuizButton.click(() => $modal.addClass("active"));
+        $closeQuizButton.click(() => $modal.removeClass("active"));
+
+        const questions = [
+            {
+                id: 1,
+                image: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff",
+                question: "What type of animal is this?",
+                options: ["Tiger", "Lion", "Leopard", "Cheetah"],
+                correctAnswer: "Cheetah"
+            },
+            {
+                id: 2,
+                image: "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7",
+                question: "Which species of penguin is this?",
+                options: ["Emperor", "King", "Adelie", "Gentoo"],
+                correctAnswer: "Emperor"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const currentQuestion = questions[currentQuestionIndex];
+            $("#questionImage").attr("src", currentQuestion.image);
+            $("#questionText").text(currentQuestion.question);
+            $("#optionsContainer").empty();
+            $("#feedback").hide();
+            $("#nextButton").hide();
+
+            $.each(currentQuestion.options, function (index, option) {
+                const $button = $("<button>")
+                    .text(option)
+                    .addClass("option-button")
+                    .click(() => selectOption(option));
+                $("#optionsContainer").append($button);
+            });
+        }
+
+        function selectOption(selectedOption) {
+            const currentQuestion = questions[currentQuestionIndex];
+            $(".option-button").prop("disabled", true);
+
+            $(".option-button").each(function () {
+                if ($(this).text() === currentQuestion.correctAnswer) {
+                    $(this).addClass("correct");
+                } else if ($(this).text() === selectedOption) {
+                    $(this).addClass("incorrect");
+                }
+            });
+
+            const $feedback = $("#feedback");
+            if (selectedOption === currentQuestion.correctAnswer) {
+                $feedback.text("Correct Answer! 🎉").css("color", "#4caf50").show();
+                score++;
+            } else {
+                $feedback.text(`Wrong Answer. The correct answer is ${currentQuestion.correctAnswer}.`)
+                    .css("color", "#f44336").show();
+            }
+
+            $("#nextButton").show();
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                loadQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            $("#questionImage, #questionText, #optionsContainer, #feedback, #nextButton").hide();
+            $("#quizCompleted").show().html(`Quiz Completed! Your score: ${score} out of ${questions.length}.<br>Visit this site tomorrow for the next quiz.`);
+        }
+
+        $("#nextButton").click(nextQuestion);
+        loadQuestion();
 
 
         // Bible Books
@@ -980,55 +1416,93 @@
                 "Ezekiel", "Daniel", "Hosea", "Joel", "Amos",
                 "Obadiah", "Jonah", "Micah", "Nahum", "Habakkuk",
                 "Zephaniah", "Haggai", "Zechariah", "Malachi", "Matthew",
-                "Mark", "Luke", "John", "Acts", "Romans",
-                "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians", "Philippians",
-                "Colossians", "1 Thessalonians", "2 Thessalonians", "1 Timothy", "2 Timothy",
-                "Titus", "Philemon", "Hebrews", "James", "1 Peter",
-                "2 Peter", "1 John", "2 John", "3 John", "Jude",
-                "Revelation"
+                "Mark", "Luke", "John", "Acts", "Romans"
             ];
 
             let currentIndex = 0;
+            let currentQuestion = 0;
+            let Booksscore = 0;
+            let timeout;
+
+            const Booksquestions = [
+                { question: "What is the first book of the Bible?", options: ["Genesis", "Exodus", "Leviticus", "Numbers"], answer: "Genesis" },
+                { question: "Which book tells the story of David and Goliath?", options: ["1 Samuel", "2 Samuel", "Judges", "Ruth"], answer: "1 Samuel" },
+                { question: "Which book contains the Ten Commandments?", options: ["Exodus", "Leviticus", "Numbers", "Deuteronomy"], answer: "Exodus" }
+            ];
 
             function displayBooks() {
                 $('#bookContainer').empty();
                 for (let i = currentIndex; i < currentIndex + 5; i++) {
                     if (i < allBooks.length) {
-                        $('#bookContainer').append(`
-                                <p>${allBooks[i]}</p>
-                            </div>
-                        `);
+                        $('#bookContainer').append(`<p class="bible-book">${allBooks[i]}</p>`);
                     }
                 }
             }
 
-            displayBooks();
+            function showQuestion() {
+                if (currentQuestion < Booksquestions.length) {
+                    let q = Booksquestions[currentQuestion];
+                    let quizHTML = `<p class="quiz-question">${q.question}</p>`;
+                    q.options.forEach(option => {
+                        quizHTML += `<button class="quizOption">${option}</button>`;
+                    });
+                    $('#quizContent').html(quizHTML);
+                } else {
+                    $('#quizContent').html(`<h3>Quiz Finished!</h3><p>Your score: ${Booksscore}/${Booksquestions.length}</p>`);
+                    $('#scoreDisplay').show();
+                }
+            }
 
-            $('#nextBooks').click(function() {
+            $(document).on('click', '.quizOption', function () {
+                clearTimeout(timeout);
+                let selectedAnswer = $(this).text();
+                let correctAnswer = Booksquestions[currentQuestion].answer;
+
+                if (selectedAnswer === correctAnswer) {
+                    $(this).addClass("correct");
+                    Booksscore++;
+                } else {
+                    $(this).addClass("wrong");
+                    $(".quizOption").each(function () {
+                        if ($(this).text() === correctAnswer) {
+                            $(this).addClass("correct");
+                        }
+                    });
+                }
+
+                $(".quizOption").prop("disabled", true);
+
+                timeout = setTimeout(() => {
+                    currentQuestion++;
+                    showQuestion();
+                }, 1500);
+            });
+
+            $('#testKnowledge').click(function () {
+                Booksscore = 0;
+                currentQuestion = 0;
+                showQuestion();
+                $('#BooksquizModal').css('display', 'flex').hide().fadeIn();
+            });
+
+            $('.close, #BooksquizModal').click(function (event) {
+                if (event.target === this) {
+                    $('#BooksquizModal').fadeOut();
+                }
+            });
+
+            $('#nextBooks').click(function () {
                 currentIndex = (currentIndex + 5) % allBooks.length;
                 displayBooks();
             });
 
-            $('#prevBooks').click(function() {
+            $('#prevBooks').click(function () {
                 currentIndex = (currentIndex - 5 + allBooks.length) % allBooks.length;
                 displayBooks();
             });
 
-            $('#testKnowledge').click(function() {
-                $('#quizContainer').toggle();
-            });
-
-            $('.quizOption').click(function() {
-                if ($(this).text() === 'Genesis') {
-                    alert('Correct!');
-                } else {
-                    alert('Incorrect. The correct answer is Genesis.');
-                }
-                $('#quizContainer').hide();
-            });
+            displayBooks();
         
-
-        // Bible Chapter
 
         // Donation
         $('#donationButton').click(function () {
@@ -1037,46 +1511,70 @@
 
                 // Events Calendar
 
-        $(document).ready(function () {
-            const events = {
-                Sunday: { time: '10:00 AM - 11:00 AM', link: 'https://zoom.us/j/1234567890' },
-                Monday: { time: '7:00 PM', link: 'https://zoom.us/j/2345678901' },
-                Tuesday: { time: '7:00 PM', link: 'https://zoom.us/j/3456789012' },
-                Wednesday: { time: '7:00 PM', link: 'https://zoom.us/j/4567890123' },
-                Thursday: { time: '7:00 PM', link: 'https://zoom.us/j/5678901234' },
-                Friday: { time: '7:00 PM', link: 'https://zoom.us/j/6789012345' },
-                Saturday: { time: '9:00 AM', link: 'https://zoom.us/j/7890123456' },
-            };
+        const events = {
+            Sunday: { time: '10:00 AM - 11:00 AM', link: 'https://zoom.us/j/1234567890' },
+            Monday: { time: '7:53 AM', link: 'https://zoom.us/j/2345678901' },
+            Tuesday: { time: '7:00 PM', link: 'https://zoom.us/j/3456789012' },
+            Wednesday: { time: '7:00 PM', link: 'https://zoom.us/j/4567890123' },
+            Thursday: { time: '7:00 PM', link: 'https://zoom.us/j/5678901234' },
+            Friday: { time: '7:00 PM', link: 'https://zoom.us/j/6789012345' },
+            Saturday: { time: '9:00 AM', link: 'https://zoom.us/j/7890123456' },
+        };
 
-            let selectedDay = new Date().toLocaleString('en-US', { weekday: 'long' });
+        let selectedDay = new Date().toLocaleString('en-US', { weekday: 'long' });
 
-            function updateEventDetails(day) {
-                $("#eventTime").text(events[day].time);
-                $("#eventLink").attr("href", events[day].link);
-            }
+        function updateEventDetails(day) {
+            $("#eventTime").text(events[day].time);
+            $("#eventLink").attr("href", events[day].link);
+            checkMeetingTime();
+        }
 
-            function renderDays() {
-                const $daysContainer = $(".days");
-                $.each(events, function (day) {
-                    const $dayElement = $("<div>").addClass("day").text(day.slice(0, 3));
+        function renderDays() {
+            const $daysContainer = $("#daysContainer");
+            $.each(events, function (day) {
+                const $dayElement = $("<div>").addClass("day").text(day.slice(0, 3));
 
-                    if (day === selectedDay) {
-                        $dayElement.addClass("active");
-                    }
+                if (day === selectedDay) {
+                    $dayElement.addClass("active");
+                }
 
-                    $dayElement.on("click", function () {
-                        $(".day").removeClass("active");
-                        $(this).addClass("active");
-                        selectedDay = day;
-                        updateEventDetails(day);
-                    });
-
-                    $daysContainer.append($dayElement);
+                $dayElement.on("click", function () {
+                    $(".day").removeClass("active");
+                    $(this).addClass("active");
+                    selectedDay = day;
+                    updateEventDetails(day);
                 });
-            }
 
-            renderDays();
-            updateEventDetails(selectedDay);
+                $daysContainer.append($dayElement);
+            });
+        }
+
+        function checkMeetingTime() {
+        const now = new Date();
+        const currentHour = now.getHours();
+        const currentMinutes = now.getMinutes();
+        const eventTime = $("#eventTime").text();
+        const [eventHour, eventMinutes] = eventTime.match(/\d+/g).map(Number);
+        const isPM = eventTime.includes("PM");
+
+        const actualEventHour = isPM && eventHour !== 12 ? eventHour + 12 : eventHour;
+
+        if (currentHour === actualEventHour && currentMinutes === eventMinutes) {
+            $("#eventLink").addClass("enabled");
+            $("#toast").fadeIn().delay(5000).fadeOut();
+
+            // Hide toast after 2 minutes (120,000 ms)
+            setTimeout(() => {
+                $("#toast").fadeOut();
+            }, 120000);
+        } else {
+            $("#eventLink").removeClass("enabled");
+        }
+    }
+
+    renderDays();
+    updateEventDetails(selectedDay);
+    setInterval(checkMeetingTime, 1000);
 
             // Notification Toggle Functionality
             let isNotified = false;
@@ -1084,7 +1582,7 @@
                 isNotified = !isNotified;
 
                 if (isNotified) {
-                    $(this).removeClass("off").text("🔔 Notifications ON");
+                    $(this).removeClass("off").text("🔔 ON");
                     Swal.fire({
                         title: "🔔 Notifications Enabled!",
                         text: "You will be reminded about today's meeting.",
@@ -1093,7 +1591,7 @@
                         confirmButtonText: "OK",
                     });
                 } else {
-                    $(this).addClass("off").text("🔕 Notifications OFF");
+                    $(this).addClass("off").text("🔕 OFF");
                     Swal.fire({
                         title: "🔕 Notifications Disabled!",
                         text: "You will not receive reminders for today.",
@@ -1103,115 +1601,70 @@
                     });
                 }
             });
-        });
 
 
 
-
-                            // Quiz based on Images
-        const questions = [
-        {
-            id: 1,
-            image: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff",
-            question: "What type of animal is this?",
-            options: ["Tiger", "Lion", "Leopard", "Cheetah"],
-            correctAnswer: "Cheetah"
-        },
-        {
-            id: 2,
-            image: "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7",
-            question: "Which species of penguin is this?",
-            options: ["Emperor", "King", "Adelie", "Gentoo"],
-            correctAnswer: "Emperor"
-        }
-    ];
-
-    let currentQuestionIndex = 0;
-    let score = 0;
-
-    function loadQuestion() {
-        const currentQuestion = questions[currentQuestionIndex];
-        $("#questionImage").attr("src", currentQuestion.image);
-        $("#questionText").text(currentQuestion.question);
-        $("#optionsContainer").empty();
-        $("#feedback").text("").hide();
-        $("#nextButton").hide();
-
-        currentQuestion.options.forEach(option => {
-            const button = $("<button>")
-                .text(option)
-                .addClass("option-button")
-                .click(() => selectOption(option));
-            $("#optionsContainer").append(button);
-        });
-    }
-
-    function selectOption(selectedOption) {
-        const currentQuestion = questions[currentQuestionIndex];
-        $(".option-button").prop("disabled", true);
-
-        $(".option-button").each(function () {
-            if ($(this).text() === currentQuestion.correctAnswer) {
-                $(this).addClass("correct");
-            } else if ($(this).text() === selectedOption && selectedOption !== currentQuestion.correctAnswer) {
-                $(this).addClass("incorrect");
-            }
-        });
-
-        if (selectedOption === currentQuestion.correctAnswer) {
-            $("#feedback").text("Correct Answer! 🎉").css("color", "#4caf50").show();
-            score++;
-        } else {
-            $("#feedback").text(`Wrong Answer. The correct answer is ${currentQuestion.correctAnswer}.`)
-                .css("color", "#f44336").show();
-        }
-
-        $("#nextButton").show();
-    }
-
-    function nextQuestion() {
-        currentQuestionIndex++;
-        if (currentQuestionIndex < questions.length) {
-            loadQuestion();
-        } else {
-            showResult();
-        }
-    }
-
-    function showResult() {
-        $("#questionImage, #questionText, #optionsContainer, #feedback, #nextButton").hide();
-        $("#quizCompleted").show().text(`Quiz Completed! Your score: ${score} out of ${questions.length}`);
-    }
-
-    $("#nextButton").click(nextQuestion);
-
-    loadQuestion();
 
     //   Refer
-            // WhatsApp Share
+        const $formmodal = $(".formmodal");
+        const $formmodalContent = $(".formmodal-content");
+        const $openformModalButton = $(".form-btn");
+        const $closeformModalButton = $(".close-btn");
+
+        // Open formmodal
+        $openformModalButton.click(() => $formmodal.addClass("active"));
+
+        // Close formmodal when clicking the close button
+        $closeformModalButton.click(() => $formmodal.removeClass("active"));
+
+        // Close formmodal when clicking outside the formmodal content
+        $formmodal.click(function (event) {
+            if (!$(event.target).closest(".formmodal-content").length) {
+                $formmodal.removeClass("active");
+            }
+        });
+
+        // Handle form submission with validation
+        $(".send-btn").click(function () {
+            let name = $("#name").val().trim();
+            let contact = $("#contact").val().trim();
+            let college = $("#college").val().trim();
+            let isValid = true;
+
+            // Remove existing error messages
+            $(".error").remove();
+
+            // Validate Name
+            if (name === "") {
+                $("#name").after("<span class='error' style='color:red; font-size: 12px;'>Name is required</span>");
+                isValid = false;
+            }
+
+            // Validate Contact (should be numbers and at least 10 digits)
+            let phoneRegex = /^[0-9]{10,}$/;
+            if (!phoneRegex.test(contact)) {
+                $("#contact").after("<span class='error' style='color:red; font-size: 12px;'>Enter a valid phone number</span>");
+                isValid = false;
+            }
+
+            // Validate College Name
+            if (college === "") {
+                $("#college").after("<span class='error' style='color:red; font-size: 12px;'>College name is required</span>");
+                isValid = false;
+            }
+
+            // If form is valid, show success message
+            if (isValid) {
+                $(".success-message").fadeIn().delay(3000).fadeOut();
+                $(".formmodal-content input").val(""); // Clear form
+            }
+        });
+
+        // WhatsApp Sharing
         $(".whatsapp-btn").click(function () {
-            let message = "Hey! I found this amazing website. Check it out: https://yourwebsite.com";
+            let message = "Hey! Check out this amazing website: https://yourwebsite.com";
             let whatsappURL = "https://wa.me/?text=" + encodeURIComponent(message);
             window.open(whatsappURL, "_blank");
-        });
-
-        // Toggle form visibility
-        $(".form-btn").click(function () {
-            $(".form-container").slideToggle();
-        });
-
-        // Handle form submission
-        $(".send-btn").click(function () {
-            let name = $("#name").val();
-            let email = $("#email").val();
-            let message = $("#message").val();
-
-            if (name && email) {
-                $(".success-message").fadeIn().delay(3000).fadeOut();
-                $(".form-container input, .form-container textarea").val(""); // Clear form
-            } else {
-                alert("Please fill in all fields.");
-            }
         });
     });
 </script>
